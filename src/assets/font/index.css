@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'CroissantOne';
+    src: local('CroissantOne'), url('Croissant_One/CroissantOne-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Raleway';
+    src: local('Raleway'), url('Raleway/Raleway-Italic-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'ConcertOne';
+    src: local('ConcertOne'), url('Concert_One/ConcertOne-Regular.ttf') format('truetype');
+}

@@ -1,19 +1,21 @@
-import anelPNG from "../../assets/img/anel.png";
-import glassPNG from "../../assets/img/gas.png";
+import * as S from "./styles";
+import { ContainerGlass, ImgLogo } from "./styles";
 import logoPNG from "../../assets/img/logo.png";
+import TextField from "../../components/TextField";
 
 export default function Register() {
   return (
-    <div
-      className={"full centralizeC"}
-      style={{ background: `url(${anelPNG}) no-repeat right top fixed` }}
-    >
-      <div
+    <S.ContainerAnel className={"full centralizeC"}>
+      <ContainerGlass
+        style={{ width: "100%", height: "100%" }}
         className={"full centralizeC"}
-        style={{ background: `url(${glassPNG}) no-repeat right center fixed` }}
       >
-        <img alt={"logo"} src={logoPNG} />
-      </div>
-    </div>
+        <ImgLogo alt={"logo"} src={logoPNG} />
+        <S.TitleType>C A D A S T R O</S.TitleType>
+        <S.Form>
+          <TextField name={"Primeiro nome"} type={"text"} code={"fFirstName"} />
+        </S.Form>
+      </ContainerGlass>
+    </S.ContainerAnel>
   );
 }

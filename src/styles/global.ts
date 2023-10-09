@@ -4,6 +4,9 @@ export const blue: string = "#3B40B7";
 export const blueStrong: string = "#2a2f89";
 export const blueLight: string = "#01D2FE";
 export const background: string = "#030446";
+export const gray: string = "#1E1F2F";
+
+export const pink: string = "#E93F78";
 
 export const GlobalStyle = createGlobalStyle`
   :root {
@@ -11,6 +14,8 @@ export const GlobalStyle = createGlobalStyle`
     --blue: ${() => blue};
     --blue-strong: ${() => blueStrong};
     --blue-light: ${() => blueLight};
+    --gray: ${() => gray};
+    --pink: ${() => pink};
     --blue-e-mail: #3C79DC;
     --grey-800: #28353d;
     --grey-900: #201F24;

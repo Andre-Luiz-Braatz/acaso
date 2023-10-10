@@ -15,11 +15,35 @@ export default function Register() {
           <S.ContainerDualTextField>
             <TextField
               name={"Primeiro nome"}
+              placeholder={"Primeiro nome"}
               type={"text"}
               code={"fFirstName"}
             />
-            <TextField name={"Último nome"} type={"text"} code={"fFirstName"} />
+            <TextField
+              name={"Último nome"}
+              type={"text"}
+              code={"fLastName"}
+              placeholder={"Último nome"}
+            />
           </S.ContainerDualTextField>
+          <TextField
+            name={"E-mail"}
+            placeholder={"Seu@email.com"}
+            type={"text"}
+            code={"fEmail"}
+          />
+          <TextField
+            name={"Senha"}
+            placeholder={"******"}
+            type={"password"}
+            code={"fPassword"}
+          />
+          <TextField
+            name={"Confirme a senha"}
+            placeholder={"******"}
+            type={"password"}
+            code={"fPasswordConfirm"}
+          />
         </S.Form>
       </S.ContainerGlass>
     </S.ContainerAnel>

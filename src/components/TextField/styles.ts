@@ -3,9 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 7px;
   font-family: Raleway, sans-serif;
-  //width: 100%;
+  width: 100%;
   align-items: center;
   justify-content: center;
 
@@ -15,6 +14,7 @@ export const Container = styled.div`
     line-height: 18px;
     margin-left: 11px;
     max-width: 339px;
+    margin-bottom: 5px;
   }
 
   input {
@@ -26,7 +26,8 @@ export const Container = styled.div`
     font-weight: 400;
     outline: 0;
     color: #f6f6f6;
-    max-width: 339px;
+    width: 100%;
+    max-width: 489px;
     min-width: 232px;
     &:focus {
       outline: 1px solid var(--pink);
@@ -37,4 +38,5 @@ export const Container = styled.div`
 export const ContainerJustify = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;

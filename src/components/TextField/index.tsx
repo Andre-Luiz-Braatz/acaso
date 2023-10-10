@@ -4,6 +4,7 @@ interface ITextField {
   name: string;
   code: string;
   type: string;
+  placeholder: string;
 }
 export default function TextField(props: ITextField) {
   return (
@@ -14,7 +15,7 @@ export default function TextField(props: ITextField) {
           type={props.type}
           id={props.code}
           name={props.code}
-          placeholder={props.name}
+          placeholder={props.placeholder}
         />
       </S.ContainerJustify>
     </S.Container>

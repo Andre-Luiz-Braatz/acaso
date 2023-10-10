@@ -3,6 +3,7 @@ import anelPNG from "../../assets/img/anel.png";
 import glassPNG from "../../assets/img/gas.png";
 
 export const ContainerAnel = styled.div`
+  padding: 45px;
   @media (min-width: 800px) {
     background: url(${anelPNG}) no-repeat right top fixed;
   }
@@ -30,6 +31,7 @@ export const Form = styled.form`
   margin-bottom: 50px;
   width: 100%;
   display: flex;
+  gap: 40px;
   flex-direction: column;
   align-items: center;
   justify-content: center;

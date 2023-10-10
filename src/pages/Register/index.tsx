@@ -10,7 +10,7 @@ export default function Register() {
         className={"full centralizeC"}
       >
         <S.ImgLogo alt={"logo"} src={logoPNG} />
-        <S.TitleType>C A D A S T R O</S.TitleType>
+        <S.TitleType>cadastro</S.TitleType>
         <S.Form>
           <S.ContainerDualTextField>
             <TextField

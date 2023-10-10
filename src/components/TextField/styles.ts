@@ -9,26 +9,26 @@ export const Container = styled.div`
   justify-content: center;
 
   label {
-    font-size: 16px;
+    font-size: 0.9rem;
     font-weight: 500;
-    line-height: 18px;
-    margin-left: 11px;
+    line-height: 1rem;
+    margin-left: 0.6rem;
     max-width: 339px;
-    margin-bottom: 5px;
+    margin-bottom: 0.3rem;
   }
 
   input {
     background-color: var(--gray);
-    padding: 15px 14px 14px 23px;
-    border-radius: 6px;
+    padding: 0.9rem 0.8rem 0.8rem 1.3rem;
+    border-radius: 0.3rem;
     border: none;
-    font-size: 12px;
+    font-size: 0.7rem;
     font-weight: 400;
     outline: 0;
     color: #f6f6f6;
     width: 100%;
-    max-width: 489px;
-    min-width: 232px;
+    //max-width: 29rem;
+    //min-width: 14rem;
     &:focus {
       outline: 1px solid var(--pink);
     }

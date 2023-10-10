@@ -8,13 +8,15 @@ interface ITextField {
 export default function TextField(props: ITextField) {
   return (
     <S.Container>
-      <label htmlFor={props.code}>{`${props.name}*`}</label>
-      <input
-        type={props.type}
-        id={props.code}
-        name={props.code}
-        placeholder={props.name}
-      />
+      <S.ContainerJustify style={{ display: "flex", flexDirection: "column" }}>
+        <label htmlFor={props.code}>{`${props.name}*`}</label>
+        <input
+          type={props.type}
+          id={props.code}
+          name={props.code}
+          placeholder={props.name}
+        />
+      </S.ContainerJustify>
     </S.Container>
   );
 }

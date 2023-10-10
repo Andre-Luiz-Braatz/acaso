@@ -28,7 +28,6 @@ export const ImgLogo = styled.img`
   margin-bottom: 3rem;
 `;
 export const Form = styled.form`
-  margin-bottom: 3rem;
   width: 100%;
   display: flex;
   gap: 2rem;
@@ -49,6 +48,5 @@ export const TitleType = styled.h3`
     letter-spacing: 0.9rem;
     text-transform: uppercase;
     font-size: 3rem;
-    margin-bottom: 7rem;
   }
 `;

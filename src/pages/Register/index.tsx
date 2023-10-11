@@ -3,6 +3,8 @@ import * as S from "./styles";
 import logoPNG from "../../assets/img/logo.png";
 import TextField from "../../components/TextField";
 import Button from "../../components/Button";
+import Redirect from "../../components/Redirect";
+import { ActionBack } from "./styles";
 
 export default function Register() {
   const onSubscribe = (event: React.FormEvent<HTMLFormElement>) => {
@@ -11,11 +13,8 @@ export default function Register() {
   };
 
   return (
-    <S.ContainerAnel className={"full centralizeC"}>
-      <S.ContainerGlass
-        style={{ width: "100%", height: "100%" }}
-        className={"full centralizeC"}
-      >
+    <S.ContainerAnel>
+      <S.ContainerGlass>
         <S.ImgLogo alt={"logo"} src={logoPNG} />
         <S.TitleType>cadastro</S.TitleType>
         <S.Form onSubmit={onSubscribe}>
@@ -51,7 +50,18 @@ export default function Register() {
             type={"password"}
             code={"fPasswordConfirm"}
           />
-          <Button name={"Criar minha conta aca.so"} />
+          <S.ContainerActions>
+            <Redirect name={"Não possui uma conta?"} />
+            <Button name={"Criar minha conta aca.so"} />
+            <S.ActionBack>
+              <Button
+                code={"aBack"}
+                name={"Voltar ao login"}
+                background={"#FFFFFF1A"}
+                color={"white"}
+              />
+            </S.ActionBack>
+          </S.ContainerActions>
         </S.Form>
       </S.ContainerGlass>
     </S.ContainerAnel>

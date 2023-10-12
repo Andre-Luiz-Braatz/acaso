@@ -6,23 +6,25 @@ import Button from "../../components/Button";
 import * as Request from "../../request";
 
 interface userSubscribe {
-  firstName: string;
-  lastName: string;
+  first_name: string;
+  last_name: string;
   email: string;
   password: string;
-  confirmPassword: string;
+  auth_token: string;
 }
 
 export default function Register() {
   const onSubscribe = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("onSubscribe");
-    Request.post(
-      userSubscribe,
-      (res: object | undefined, error: object | undefined): void => {
-        console.log("ok", res, error);
-      },
-    );
+    Request.post(userSubscribe, (res: object | undefined, error: any): void => {
+      if (error)
+        alert(
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          error?.response?.data?.detail[0].msg ||
+            "Something unexpected happened",
+        );
+      else alert("Conta criada com sucesso!");
+    });
   };
 
   const [userSubscribe, setUserSubscribe] = useState<userSubscribe>(
@@ -49,13 +51,13 @@ export default function Register() {
               name={"Primeiro nome"}
               placeholder={"Primeiro nome"}
               type={"text"}
-              code={"firstName"}
+              code={"first_name"}
               onChange={handleUserSubscribe}
             />
             <TextField
               name={"Último nome"}
               type={"text"}
-              code={"lastName"}
+              code={"last_name"}
               placeholder={"Último nome"}
               onChange={handleUserSubscribe}
             />
@@ -78,7 +80,7 @@ export default function Register() {
             name={"Confirme a senha"}
             placeholder={"******"}
             type={"password"}
-            code={"confirmPassword"}
+            code={"auth_token"}
             onChange={handleUserSubscribe}
           />
           <S.ContainerActions>

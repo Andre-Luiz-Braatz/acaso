@@ -1,6 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
 const baseURL = "https://api.staging.aca.so";
-const token = "andre";
 
 type TCallbackData = (response?: any, error?: any) => void;
 
@@ -11,23 +10,23 @@ export function post(data: any, callback: TCallbackData): void {
     method: "post",
     url: `${baseURL}/auth/sign-up`,
     headers: {
-      Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
-    data_request,
+    data: data_request,
   };
 
   send_request(config, callback);
 }
 
 function send_request(config: AxiosRequestConfig, callback: TCallbackData) {
+  console.log("config", config);
   axios(config)
     .then((response) => {
       console.log("response: ", response);
       callback(response);
     })
     .catch((error) => {
-      console.log("error: ", error);
-      callback(undefined, error);
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      callback(undefined, error?.response?.data);
     });
 }

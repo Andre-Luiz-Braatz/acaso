@@ -3,6 +3,7 @@ import * as S from "./styles";
 import logoPNG from "../../assets/img/logo.png";
 import TextField from "../../components/TextField";
 import Button from "../../components/Button";
+import * as Request from "../../request";
 
 interface userSubscribe {
   firstName: string;
@@ -16,6 +17,12 @@ export default function Register() {
   const onSubscribe = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("onSubscribe");
+    Request.post(
+      userSubscribe,
+      (res: object | undefined, error: object | undefined): void => {
+        console.log("ok", res, error);
+      },
+    );
   };
 
   const [userSubscribe, setUserSubscribe] = useState<userSubscribe>(

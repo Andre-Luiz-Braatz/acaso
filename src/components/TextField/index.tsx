@@ -1,3 +1,4 @@
+import React from "react";
 import * as S from "./styles";
 
 interface ITextField {
@@ -5,6 +6,7 @@ interface ITextField {
   code: string;
   type: string;
   placeholder: string;
+  onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
 }
 export default function TextField(props: ITextField) {
   return (
@@ -16,6 +18,7 @@ export default function TextField(props: ITextField) {
           id={props.code}
           name={props.code}
           placeholder={props.placeholder}
+          onChange={props.onChange}
         />
       </S.ContainerJustify>
     </S.Container>

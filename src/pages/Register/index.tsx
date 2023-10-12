@@ -1,16 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./styles";
 import logoPNG from "../../assets/img/logo.png";
 import TextField from "../../components/TextField";
 import Button from "../../components/Button";
-import Redirect from "../../components/Redirect";
-import { ActionBack } from "./styles";
+
+interface userSubscribe {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
 
 export default function Register() {
   const onSubscribe = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("onSubscribe");
   };
+
+  const [userSubscribe, setUserSubscribe] = useState<userSubscribe>(
+    {} as userSubscribe,
+  );
+
+  const handleUserSubscribe = (event: React.FormEvent<HTMLInputElement>) => {
+    const { name, value } = event.currentTarget;
+    setUserSubscribe({ ...userSubscribe, [name]: value.trim() });
+  };
+
+  useEffect(() => {
+    console.log("userSubscribe", userSubscribe);
+  }, [userSubscribe]);
 
   return (
     <S.ContainerAnel>
@@ -23,35 +42,40 @@ export default function Register() {
               name={"Primeiro nome"}
               placeholder={"Primeiro nome"}
               type={"text"}
-              code={"fFirstName"}
+              code={"firstName"}
+              onChange={handleUserSubscribe}
             />
             <TextField
               name={"Último nome"}
               type={"text"}
-              code={"fLastName"}
+              code={"lastName"}
               placeholder={"Último nome"}
+              onChange={handleUserSubscribe}
             />
           </S.ContainerDualTextField>
           <TextField
             name={"E-mail"}
             placeholder={"Seu@email.com"}
             type={"text"}
-            code={"fEmail"}
+            code={"email"}
+            onChange={handleUserSubscribe}
           />
           <TextField
             name={"Senha"}
             placeholder={"******"}
             type={"password"}
-            code={"fPassword"}
+            code={"password"}
+            onChange={handleUserSubscribe}
           />
           <TextField
             name={"Confirme a senha"}
             placeholder={"******"}
             type={"password"}
-            code={"fPasswordConfirm"}
+            code={"confirmPassword"}
+            onChange={handleUserSubscribe}
           />
           <S.ContainerActions>
-            <Redirect name={"Não possui uma conta?"} />
+            <p>Não possui uma conta?</p>
             <Button name={"Criar minha conta aca.so"} />
             <S.ActionBack>
               <Button
